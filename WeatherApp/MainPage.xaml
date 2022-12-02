@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.MainPage"
+             xmlns:models="clr-namespace:WeatherApp"
+             xmlns:viewmodel="clr-namespace:WeatherApp">
+    
+    
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*,Auto,Auto">
+            <Label Text="Wetter" 
+                   TextColor="{DynamicResource Primary}"
+                   FontSize="25" Margin="10" />
+
+            <CollectionView Grid.Row="1" 
+                            ItemsSource="{Binding Wetter}">
+                <CollectionView.EmptyView>
+                    <Label Text="Kein Wetter-Eintrag vorhanden!" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Weather">
+                           <Grid ColumnDefinitions="150,*">
+                            <Image MinimumHeightRequest="150" Source="{Binding Bild}" />
+
+                            <StackLayout Grid.Column="1">
+
+                                <Label Text="{Binding Beschreibung}" FontAttributes="Bold" />
+                            </StackLayout>
+                           </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
