@@ -1,12 +1,11 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace WeatherApp 
 {
-    public class  Weather : ObservableObject
+    public class  Weather
     {
         private System.DateTime _datum;
 
@@ -24,7 +23,7 @@ namespace WeatherApp
         string _titel = string.Empty;
             public string Titel
         {
-            get => default;
+            get => _titel;
             set
             {
                 _titel = value;
@@ -44,10 +43,10 @@ namespace WeatherApp
         string _beschreibung = string.Empty;
         public string Beschreibung
         {
-            get => default;
+            get => _beschreibung;
             set
             {
-                SetProperty(ref _beschreibung, value);
+                _beschreibung = value;
                 
             }
         }

@@ -20,12 +20,12 @@
                 </CollectionView.EmptyView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Weather">
-                           <Grid ColumnDefinitions="150,*">
+                           <Grid ColumnDefinitions="150,*" Margin="10">
                             <Image MinimumHeightRequest="150" Source="{Binding Bild}" />
 
-                            <StackLayout Grid.Column="1">
-
-                                <Label Text="{Binding Beschreibung}" FontAttributes="Bold" />
+                            <StackLayout Grid.Column="1" Margin="5,0">
+                                <Label Text="{Binding Titel}" FontAttributes="Bold" />
+                                <Label Text="{Binding Beschreibung}" />
                             </StackLayout>
                            </Grid>
                     </DataTemplate>
